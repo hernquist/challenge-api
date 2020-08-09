@@ -12,7 +12,8 @@ const { SECRET, MONGO_PASSWORD, NODE_ENV, PORT, LOCAL_DATABASE } = process.env;
 const port = PORT || 3003;
 const development = NODE_ENV === "development";
 
-const graphiql = development;
+// const graphiql = development;
+const graphiql = true;
 
 console.log(development, MONGO_PASSWORD);
 
