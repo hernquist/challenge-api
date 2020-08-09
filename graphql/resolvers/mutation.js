@@ -1,6 +1,6 @@
 const Signup = require("./mutations/signup");
-const Login = require("./mutations/Login");
-const SavePractice = require("./mutations/SavePractice");
+const Login = require("./mutations/login");
+const SavePractice = require("./mutations/savePractice");
 
 module.exports = {
   Mutation: {
