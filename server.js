@@ -4,7 +4,6 @@ const graphqlHttp = require("express-graphql");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const { specifiedRules, NoSchemaIntrospectionCustomRule } = require("graphql");
 
 const schema = require("./graphql/schema");
 const { authUserMiddleware } = require("./functions/middlewares");
@@ -57,7 +56,6 @@ app.use(
       authUser: req.user,
     },
     graphiql,
-    validationRules: [...specifiedRules, NoSchemaIntrospectionCustomRule],
   }))
 );
 
