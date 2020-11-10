@@ -11,7 +11,7 @@ module.exports = {
       await Practice.find({ userId: _id }),
   },
   Module: {
-    content: async ({ content }, ___, { Content, Practice }) => {
+    content: async ({ content }, ___, { Content }) => {
       if (content.length > 0) {
         const [listA] = await Content.find({
           name: content[0].name,
