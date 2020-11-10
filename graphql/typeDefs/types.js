@@ -28,17 +28,23 @@ module.exports = `
     message: String
   }
 
+  type ListItem {
+    item: String
+  }
+
+  type Content {
+    _id: String
+    name: String
+    type: String
+    list: [String]
+  }
+
   type Module {
     _id: String!
-    fractions: [FractionList]
+    content: [Content]
     numberOfTurns: Int
     slug: String!
   }
 
-  type FractionList {
-    _id: String
-    name: String
-    list: [String]
-  }
 
 `;

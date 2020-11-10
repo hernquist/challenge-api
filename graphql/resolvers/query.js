@@ -18,22 +18,19 @@ module.exports = {
         return new Error("user not authenticated");
       }
     },
-    fractionList: async (__, { _id }, context) => {
-      const { FractionList } = context;
-
-      const [list] = await FractionList.find({});
-      return list;
-    },
-    module: async (__, { slug }, context) => {
-      const { Module } = context;
+    module: async (__, { slug }, { Module }) => {
       const [mod] = await Module.find({ slug });
 
       return {
         _id: mod._id,
         numberOfTurns: mod.numberOfTurns,
         slug: mod.slug,
-        fractions: mod.fractions,
+        content: mod.content,
       };
+    },
+    content: async (__, { type, name }, { Content }) => {
+      const [content] = await Content.find({ type, name });
+      return content;
     },
   },
 };

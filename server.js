@@ -7,14 +7,13 @@ const cors = require("cors");
 
 const schema = require("./graphql/schema");
 const { authUserMiddleware } = require("./functions/middlewares");
-const { User, Practice, FractionList, Module } = require("./models");
+const { User, Practice, Module, Content } = require("./models");
 
 const { SECRET, MONGO_PASSWORD, NODE_ENV, PORT, LOCAL_DATABASE } = process.env;
 const port = PORT || 3003;
 const development = NODE_ENV === "development";
 
-// const graphiql = development;
-const graphiql = true;
+const graphiql = development;
 
 console.log(development, MONGO_PASSWORD);
 
@@ -50,8 +49,8 @@ app.use(
     context: {
       User,
       Practice,
-      FractionList,
       Module,
+      Content,
       SECRET,
       authUser: req.user,
     },

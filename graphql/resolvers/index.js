@@ -11,12 +11,20 @@ module.exports = {
       await Practice.find({ userId: _id }),
   },
   Module: {
-    fractions: async ({ fractions }, ___, { FractionList }) => {
-      if (fractions) {
-        const [listA] = await FractionList.find({ name: fractions[0] });
-        const [listB] = await FractionList.find({ name: fractions[1] });
+    content: async ({ content }, ___, { Content, Practice }) => {
+      if (content.length > 0) {
+        const [listA] = await Content.find({
+          name: content[0].name,
+          type: content[0].type,
+        });
+        const [listB] = await Content.find({
+          name: content[1].name,
+          type: content[1].type,
+        });
+
         return [listA, listB];
       }
+      return [];
     },
   },
 };
