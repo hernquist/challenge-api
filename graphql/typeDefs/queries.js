@@ -2,6 +2,6 @@ module.exports = `
   type Query {
     user: User
     module(slug: String!): Module
-    fractionList(_id: String): FractionList
+    content(type: String!, name: String!): Content
   }
-`;
+  `;

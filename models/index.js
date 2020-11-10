@@ -18,29 +18,31 @@ const user = {
   practices: [practice],
 };
 
-const fractionList = {
+const contentType = mongoose.Schema({
   name: String,
-  list: [String],
-};
+  type: String,
+});
 
 const moduleType = {
-  fractions: [String],
+  content: [contentType],
   numberOfTurns: Number,
   slug: String,
 };
 
+const content = {
+  name: String,
+  type: String,
+  list: [String],
+};
+
 const User = mongoose.model("User", user);
 const Practice = mongoose.model("Practice", practice);
-const FractionList = mongoose.model(
-  "FractionList",
-  fractionList,
-  "fractionLists"
-);
 const Module = mongoose.model("Module", moduleType);
+const Content = mongoose.model("Content", content);
 
 module.exports = {
   User,
   Practice,
-  FractionList,
   Module,
+  Content,
 };
