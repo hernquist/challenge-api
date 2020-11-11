@@ -9,6 +9,7 @@ const practice = {
   totalQuestion: Number,
   totalCorrect: Number,
   score: Number,
+  assessmentType: String,
 };
 
 const user = {

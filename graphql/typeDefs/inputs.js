@@ -7,5 +7,6 @@ module.exports = `
     totalQuestion: Int
     totalCorrect: Int
     score: Float
+    assessmentType: String
   }
 `;

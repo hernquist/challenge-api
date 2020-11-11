@@ -12,8 +12,6 @@ module.exports = {
       userId: authUser._id,
     }).save();
 
-    console.log(savedUser);
-
     return {
       success: true,
       message: "",
