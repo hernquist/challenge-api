@@ -16,6 +16,7 @@ module.exports = `
     totalQuestion: Int
     totalCorrect: Int
     score: Float
+    assessmentType: String
   }
 
   type AuthObject {
@@ -45,6 +46,4 @@ module.exports = `
     numberOfTurns: Int
     slug: String!
   }
-
-
 `;
