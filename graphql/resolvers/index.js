@@ -12,19 +12,17 @@ module.exports = {
   },
   Module: {
     content: async ({ content }, ___, { Content }) => {
-      if (content.length > 0) {
-        const [listA] = await Content.find({
-          name: content[0].name,
-          type: content[0].type,
-        });
-        const [listB] = await Content.find({
-          name: content[1].name,
-          type: content[1].type,
-        });
+      let returnLists = [];
 
-        return [listA, listB];
+      for (const c of content) {
+        const [list] = await Content.find({
+          name: c.name,
+          type: c.type,
+        });
+        returnLists.push(list);
       }
-      return [];
+
+      return returnLists;
     },
   },
 };
