@@ -46,4 +46,12 @@ module.exports = `
     numberOfTurns: Int
     slug: String!
   }
+
+  type ContentMap {
+    _id: String
+    topic: String
+    engagement: [String]
+    level: [Int]
+    assessment: [[String]]
+  }
 `;

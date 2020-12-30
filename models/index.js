@@ -36,14 +36,23 @@ const content = {
   list: [String],
 };
 
+const contentMap = {
+  topic: String,
+  engagement: [String],
+  level: [Number],
+  assessment: [[String]],
+};
+
 const User = mongoose.model("User", user);
 const Practice = mongoose.model("Practice", practice);
 const Module = mongoose.model("Module", moduleType);
 const Content = mongoose.model("Content", content);
+const ContentMap = mongoose.model("Content-Map", contentMap);
 
 module.exports = {
   User,
   Practice,
   Module,
   Content,
+  ContentMap,
 };
