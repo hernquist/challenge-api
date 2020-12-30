@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const schema = require("./graphql/schema");
 const { authUserMiddleware } = require("./functions/middlewares");
-const { User, Practice, Module, Content, ContentMap } = require("./models");
+const Models = require("./models");
 
 const { SECRET, MONGO_PASSWORD, NODE_ENV, PORT, LOCAL_DATABASE } = process.env;
 const port = PORT || 3003;
@@ -20,7 +20,6 @@ const DATABASE = `mongodb+srv://firstUser:${MONGO_PASSWORD}@cluster0-w51h9.mongo
 const database = DATABASE;
 
 mongoose
-  //   .connect(database, { useNewUrlParser: true, useFindAndModify: false })
   .connect(database, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((_) => console.log("mongoose.connect: authentication working"))
   .catch((err) => console.log("mongoose.connect", err));
@@ -42,11 +41,7 @@ app.use(
   graphqlHttp((req) => ({
     schema,
     context: {
-      User,
-      Practice,
-      Module,
-      Content,
-      ContentMap,
+      ...Models,
       SECRET,
       authUser: req.user,
     },
