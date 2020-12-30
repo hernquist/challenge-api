@@ -47,13 +47,11 @@ module.exports = `
     slug: String!
   }
 
-  type ContentMap = {
+  type ContentMap {
     _id: String
     topic: String
     engagement: [String]
     level: [Int]
-   
+    assessment: [[String]]
   }
 `;
-
-// assessment: [[String]];

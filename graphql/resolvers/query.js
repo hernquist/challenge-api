@@ -32,11 +32,9 @@ module.exports = {
       const [content] = await Content.find({ type, name });
       return content;
     },
-    contentMap: async (y, z, context) => {
-      const { ContentMap } = context;
-      // const x = await ContentMap.find();
-      console.log("contentMap", "x");
-      return [];
+    contentMap: async (__, ___, { ContentMap }) => {
+      const contentMaps = await ContentMap.find({});
+      return contentMaps;
     },
   },
 };

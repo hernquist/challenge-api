@@ -3,6 +3,6 @@ module.exports = `
     user: User
     module(slug: String!): Module
     content(type: String!, name: String!): Content
-    contentMap: ContentMap 
+    contentMap: [ContentMap] 
   }
 `;
