@@ -1,6 +1,6 @@
 const { makeExecutableSchema } = require("graphql-tools");
 
-// const enums = require("./typeDefs/enums");
+const enums = require("./typeDefs/enums");
 const inputs = require("./typeDefs/inputs");
 const mutations = require("./typeDefs/mutations");
 const queries = require("./typeDefs/queries");
@@ -10,6 +10,7 @@ const types = require("./typeDefs/types");
 const resolvers = require("./resolvers");
 
 const typeDefs = `
+  ${enums}
   ${inputs}
   ${mutations}
   ${queries}
