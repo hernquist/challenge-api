@@ -28,7 +28,7 @@ module.exports = {
             (assessment) =>
               assessment.topic === curr.topic &&
               assessment.engagement === engagement &&
-              assessment.level === j
+              assessment.level === j + 1
           );
           const passed = foundAssessments.some(
             (assessment) => assessment.score === 1
