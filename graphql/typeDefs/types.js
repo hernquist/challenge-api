@@ -4,6 +4,7 @@ module.exports = `
     name: String!
     email: String
     practices: [Practice]
+    upNextModules: [String]
   }
 
   type Practice {
@@ -22,6 +23,10 @@ module.exports = `
   type AuthObject {
     token: String
     message: String
+  }
+
+  type UpNextModules {
+    upNextModules: [String]
   }
 
   type MutationResponse {

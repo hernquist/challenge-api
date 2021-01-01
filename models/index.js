@@ -17,6 +17,7 @@ const user = {
   email: String,
   password: String,
   practices: [practice],
+  upNextModules: [String],
 };
 
 const contentType = mongoose.Schema({
